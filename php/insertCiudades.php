@@ -27,7 +27,7 @@ if ($conn) {
 
   echo "<div class='container mt-5'>
           <div class='row'>
-            <div class='col-sm-2'><a href='../index.html'>Volver</a></div>
+            <div class='col-sm-2'><a href='../index.php'>Volver</a></div>
             <div class='col-sm-8'>
               <h3>Ciudades</h3>
             </div>

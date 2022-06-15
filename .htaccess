@@ -1,0 +1,3 @@
+SetEnv PHP_MYSQL_USER root
+SetEnv PHP_MYSQL_PASSWORD root
+SetEnv PHP_MYSQL_HOST db
