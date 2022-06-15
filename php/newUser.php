@@ -72,10 +72,14 @@ if (!empty($_POST["nombre"]) && !empty($_POST["apellidos"]) && !empty($_POST["ni
       $qry3 = $conn->query("SELECT idUSUARIO FROM usuarios WHERE nickname = '$nickname'");
       while ($result = mysqli_fetch_array($qry3)) {
         $qry4 = $conn->query("INSERT INTO contrasenas (contrasena, idUSUARIO) VALUES('" . md5($password) . "','" . $result['idUSUARIO'] . "')");
+        if ($qry4) {
+          echo '<script language="javascript">alert("Registro Exitoso!!");</script>';
+        }
       }
     }
   } else {
-    echo 'Usuario ya existe';
+    echo
+    '<script language="javascript">alert("ERROR AL REGISTRAR USUARIO. Usuario ya existe. Intente nuevamente.");</script>';
   };
 }
 
