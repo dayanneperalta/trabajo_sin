@@ -95,9 +95,9 @@ $producto = '';
 $local = '';
 
 if (!empty($_POST["stock"]) && !empty($_POST["producto"]) && !empty($_POST["local"])) {
-  $GLOBALS['stock'] = $_POST["stock"];
-  $GLOBALS['producto'] = $_POST["producto"];
-  $GLOBALS['local'] = $_POST["local"];
+  $stock = $_POST["stock"];
+  $producto = $_POST["producto"];
+  $local = $_POST["local"];
 
   $validar = $conn->query("SELECT * FROM stock_local WHERE idPRODUCTO = '$producto' AND idLOCAL = '$local'");
   if (mysqli_num_rows($validar) == 0) {

@@ -18,7 +18,7 @@ include "./php/header.php";
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">GRUPO 10</a>
+        <a class="navbar-brand" href="">GRUPO 10</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +37,8 @@ include "./php/header.php";
               <a class="nav-link" href="#">Pricing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="./php/login.php"><?php
+                                                          echo isset($_SESSION['user_id']) ? 'Perfil' : 'Iniciar sesión'; ?></a>
             </li>
           </ul>
           <form action="" method="post" class="d-flex">
@@ -47,8 +48,6 @@ include "./php/header.php";
         </div>
       </div>
     </nav>
-
-
 
 
     <h2>Ingresar datos en la BD: </h2>

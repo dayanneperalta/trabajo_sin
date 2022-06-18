@@ -19,7 +19,7 @@ echo '
 $metodo_pago = '';
 
 if (!empty($_POST["metodo"])) {
-  $GLOBALS['metodo_pago'] = $_POST["metodo"];
+  $metodo_pago = $_POST["metodo"];
 };
 
 if ($conn) {

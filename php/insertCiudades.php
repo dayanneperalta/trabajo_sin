@@ -19,7 +19,7 @@ echo '
 $ciudad = '';
 
 if (!empty($_POST["ciudad"])) {
-  $GLOBALS['ciudad'] = $_POST["ciudad"];
+  $ciudad = $_POST["ciudad"];
 };
 
 if ($conn) {

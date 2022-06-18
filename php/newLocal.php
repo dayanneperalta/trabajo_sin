@@ -76,8 +76,8 @@ $local = '';
 $ciudad = '';
 
 if (!empty($_POST["local"]) && !empty($_POST["ciudad"])) {
-  $GLOBALS['local'] = $_POST["local"];
-  $GLOBALS['ciudad'] = $_POST["ciudad"];
+  $local = $_POST["local"];
+  $ciudad = $_POST["ciudad"];
 
   $validar = $conn->query("SELECT * FROM locales WHERE local = '$local'");
 
