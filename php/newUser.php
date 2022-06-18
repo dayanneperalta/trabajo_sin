@@ -2,8 +2,6 @@
 include "./connection.php";
 include "./header.php";
 
-session_start();
-
 echo $header_html;
 if (!isset($_SESSION['user_id'])) {
   if ($conn) {
@@ -75,12 +73,18 @@ if (!isset($_SESSION['user_id'])) {
         while ($result = mysqli_fetch_array($qry3)) {
           $qry4 = $conn->query("INSERT INTO contrasenas (contrasena, idUSUARIO) VALUES('" . md5($password) . "','" . $result['idUSUARIO'] . "')");
           if ($qry4) {
-            echo '<script language="javascript">alert("Registro Exitoso!!");</script>';
-            $_SESSION['user_id'] = $nickname;
+            $qry5 = $conn->query("SELECT * FROM ciudades WHERE idCIUDAD = " . $idCiudad);
+            $qry6 = $conn->query("SELECT * FROM usuarios WHERE nickname = '$nickname'");
+            $city = mysqli_fetch_array($qry5);
+            $usuario = mysqli_fetch_array($qry6);
+            $_SESSION['user_id'] = $usuario['idUSUARIO'];
+            $_SESSION['nickname'] = $nickname;
             $_SESSION['user_rol'] = $idRol;
-            $_SESSION['nombre'] = $nombre;
+            $_SESSION['nombres'] = $nombre;
             $_SESSION['apellidos'] = $apellidos;
             $_SESSION['idCiudad'] = $idCiudad;
+            $_SESSION['ciudad'] = $city['ciudad'];
+            echo '<script language="javascript">alert("Registro Exitoso!!");</script>';
             header("Location: ./login.php");
           }
         }

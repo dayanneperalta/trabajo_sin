@@ -16,7 +16,30 @@ if ($conn) {
   <p class="mb-0">Para poder usar el carrito de compras, es necesario tener una sesión activa. Por favor, <a href="./login.php" class="alert-link">inicie sesión</a>.</p>
 </div>
 </div>';
+  } else {
+    $qryLocal = $conn->query("SELECT * FROM locales WHERE idCIUDAD= " . $_SESSION['idCiudad'] . " LIMIT 1");
+    if (mysqli_num_rows($qryLocal) == 1) {
+      $resultLocal = mysqli_fetch_array($qryLocal);
+
+      echo
+      '<div class="row mb-2">
+      <label for="local" class="col-sm-auto col-form-label">Local de recojo en ' . $_SESSION['ciudad'] . ':</label>
+      <div class="col-sm-auto">
+      <fieldset disabled>
+        <input type="text" placeholder="' . $resultLocal['local'] . '"class="form-control form-control-sm" id="local" name="local" autofocus required>
+        </fieldset>
+      </div>
+      <div class="col-sm-auto"><p class="text-primary">Para cambiar local de recojo, cambie su <a href="./login.php"><strong>ciudad</strong></a>.</p></div>
+    </div>';
+    } else {
+      echo '<div class="row mb-2">
+      <label for="local" class="col-sm-auto ms-3 col-form-label">No existe local de recojo en ' . $_SESSION['ciudad'] . '</label>
+      <div class="col-sm-auto"><p class="text-primary mt-2">Para cambiar local de recojo, cambie su <a href="./login.php"><strong>ciudad</strong></a>.</p></div>
+      </div>';
+    }
   }
+
+
   while ($result = mysqli_fetch_array($qry)) {
     $qry2 = $conn->query("SELECT marca FROM marcas WHERE idMARCA = " . $result['idMARCA']);
 

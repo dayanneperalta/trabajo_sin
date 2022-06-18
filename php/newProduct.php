@@ -42,11 +42,11 @@ if ($conn) {
   while ($result = mysqli_fetch_array($qry)) {
     echo '<option value="' . $result['idMARCA'] . '">' . $result['marca'] . '</option>';
   }
-  echo '</select>';
-  echo    '</div>';
-  echo  '</div>';
-  echo  '<button type="submit" class="btn btn-primary">Ingresar producto</button>';
-  echo '</form>';
+  echo '</select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Ingresar producto</button>
+   </form>';
 }
 
 $producto = '';
