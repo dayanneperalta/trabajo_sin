@@ -24,12 +24,12 @@ $header_html = '
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Inicio
+              <a class="nav-link active" href="../index.php">Inicio
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="./showProducts.php">Productos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Pricing</a>

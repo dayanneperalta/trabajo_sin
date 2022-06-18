@@ -26,12 +26,12 @@ include "./php/header.php";
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Inicio
+              <a class="nav-link active" href="">Inicio
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="./php/showProducts.php">Productos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Pricing</a>
@@ -58,6 +58,9 @@ include "./php/header.php";
       <a href="./php/insertMarcas.php">Marca</a><br>
       <a href="./php/insertMetodos.php">Método de Pago</a><br>
       <a href="./php/newUser.php">Registrar usuario</a><br>
+      <a href="./php/newProduct.php">Registrar producto</a><br>
+      <a href="./php/newLocal.php">Registrar local</a><br>
+      <a href="./php/insertStock.php">Registrar stock</a><br>
     </div>
   </div>
 
