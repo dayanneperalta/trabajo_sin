@@ -26,8 +26,8 @@ $marca = '';
 $descripcion = '';
 
 if (!empty($_POST["marca"]) && !empty($_POST["descripcion"])) {
-  $GLOBALS['marca'] = $_POST["marca"];
-  $GLOBALS['descripcion'] = $_POST["descripcion"];
+  $marca = $_POST["marca"];
+  $descripcion = $_POST["descripcion"];
 };
 
 if ($conn) {

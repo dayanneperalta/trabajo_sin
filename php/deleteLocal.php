@@ -5,7 +5,7 @@ include "./header.php";
 
 $idLOCAL = '';
 if (!empty($_GET["id"])) {
-  $GLOBALS['idLOCAL'] = $_GET["id"];
+  $idLOCAL = $_GET["id"];
 }
 
 try {

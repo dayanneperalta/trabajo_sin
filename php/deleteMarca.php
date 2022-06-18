@@ -5,7 +5,7 @@ include "./header.php";
 
 $idMARCA = '';
 if (!empty($_GET["id"])) {
-  $GLOBALS['idMARCA'] = $_GET["id"];
+  $idMARCA = $_GET["id"];
 }
 
 try {

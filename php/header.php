@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+$userValidate = isset($_SESSION['user_id']) ? 'Perfil' : 'Iniciar sesión';
 $header_html = '
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@ $header_html = '
 <div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">GRUPO 10</a>
+        <a class="navbar-brand" href="../index.php">GRUPO 10</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
           aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,7 +37,7 @@ $header_html = '
               <a class="nav-link" href="#">Pricing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Registrar</a>
+              <a class="nav-link" href="./login.php">' . $userValidate . '</a>
             </li>
           </ul>
           <form action="" method="post" class="d-flex">

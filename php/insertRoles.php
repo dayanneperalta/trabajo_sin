@@ -14,10 +14,11 @@ echo '
     </div>
     <button type="submit" class="btn btn-primary">Ingresar rol</button>
   </form>';
+
 $rol = '';
 
 if (!empty($_POST["rol"])) {
-  $GLOBALS['rol'] = $_POST["rol"];
+  $rol = $_POST["rol"];
 };
 
 if ($conn) {

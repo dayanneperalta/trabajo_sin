@@ -7,21 +7,21 @@ echo $header_html;
 if ($conn) {
   $qry = $conn->query('SELECT * FROM ciudades');
   $qry2 = $conn->query('SELECT * FROM locales');
-  echo '<br>';
-  echo '<div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>';
-  echo '<br>';
-  echo '<form action="" method="post" enctype="multipart/form-data">';
-  echo '<div class="row mb-3">';
-  echo    '<label for="local" class="col-sm-2 col-form-label">Local:</label>';
-  echo    '<div class="col-sm-4">';
-  echo      '<input type="text" class="form-control" id="local" name="local" autofocus required>';
-  echo    '</div>';
-  echo  '</div>';
-  echo '<div class="row mb-3">';
-  echo    '<label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>';
-  echo    '<div class="col-sm-4">';
-  echo      '<select class="form-select" name="ciudad" id="ciudad" required>';
-  echo  '<option value="">--Escoge una ciudad--</option>';
+  echo '<br>
+   <div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>
+   <br>
+   <form action="" method="post">
+   <div class="row mb-3">
+      <label for="local" class="col-sm-2 col-form-label">Local:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="local" name="local" autofocus required>
+      </div>
+    </div>
+   <div class="row mb-3">
+      <label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>
+      <div class="col-sm-4">
+        <select class="form-select" name="ciudad" id="ciudad" required>
+    <option value="">--Escoge una ciudad--</option>';
   while ($result = mysqli_fetch_array($qry)) {
     echo '<option value="' . $result['idCIUDAD'] . '">' . $result['ciudad'] . '</option>';
   }
@@ -45,7 +45,7 @@ if ($conn) {
                   <tr>
                     <td>idLOCAL</td>
                     <td>Local</td>
-                    <td>idCIUDAD</td>
+                    <td>Ciudad</td>
                   </tr>
                 </thead>
               <tbody>";
@@ -76,8 +76,8 @@ $local = '';
 $ciudad = '';
 
 if (!empty($_POST["local"]) && !empty($_POST["ciudad"])) {
-  $GLOBALS['local'] = $_POST["local"];
-  $GLOBALS['ciudad'] = $_POST["ciudad"];
+  $local = $_POST["local"];
+  $ciudad = $_POST["ciudad"];
 
   $validar = $conn->query("SELECT * FROM locales WHERE local = '$local'");
 
