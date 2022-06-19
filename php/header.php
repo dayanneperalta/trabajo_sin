@@ -2,6 +2,9 @@
 <?php
 session_start();
 $userValidate = isset($_SESSION['user_id']) ? 'Perfil' : 'Iniciar sesión';
+$carritoValidate = isset($_SESSION["user_id"]) ? "<li class='nav-item'>
+              <a class='nav-link' href='./carrito.php'>Carrito</a>
+            </li>" : '';
 $header_html = '
 <!DOCTYPE html>
 <html lang="en">
@@ -34,11 +37,9 @@ $header_html = '
               <a class="nav-link" href="./showProducts.php">Productos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./login.php">' . $userValidate . '</a>
-            </li>
+            </li>'
+  . $carritoValidate . '                
           </ul>
           <form action="" method="post" class="d-flex">
             <input class="form-control me-sm-2" type="text" placeholder="Buscar">

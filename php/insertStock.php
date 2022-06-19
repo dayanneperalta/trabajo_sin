@@ -93,7 +93,7 @@ $stock = '';
 $producto = '';
 $local = '';
 
-if (!empty($_POST["stock"]) && !empty($_POST["producto"]) && !empty($_POST["local"])) {
+if (/* !empty($_POST["stock"]) &&  */!empty($_POST["producto"]) && !empty($_POST["local"])) {
   $stock = $_POST["stock"];
   $producto = $_POST["producto"];
   $local = $_POST["local"];
