@@ -50,17 +50,10 @@ include "./php/header.php";
     </nav>
 
 
-    <h2>Ingresar datos en la BD: </h2>
-    <div>
-      <a href="./php/insertRoles.php">Roles</a><br>
-      <a href="./php/insertCiudades.php">Ciudades</a><br>
-      <a href="./php/insertMarcas.php">Marca</a><br>
-      <a href="./php/insertMetodos.php">Método de Pago</a><br>
-      <a href="./php/newUser.php">Registrar usuario</a><br>
-      <a href="./php/newProduct.php">Registrar producto</a><br>
-      <a href="./php/newLocal.php">Registrar local</a><br>
-      <a href="./php/insertStock.php">Registrar stock</a><br>
-    </div>
+    <h1>HOLA</h1>
+
+
+
   </div>
 
   <?php

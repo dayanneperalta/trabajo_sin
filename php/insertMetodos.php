@@ -4,12 +4,12 @@ include './header.php';
 
 echo $header_html;
 
-echo '
-<h4>Ingresar método de pago:</h4>
-  <form action="" method="post">
+echo '<div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+<h4 class="ms-2">Ingresar método de pago:</h4>
+  <form action="" method="post" class="ms-2">
     <div class="row mb-3">
-      <label for="metodo" class="col-sm-2 col-form-label">Método de pago:</label>
-      <div class="col-sm-4">
+      <label for="metodo" class="col-sm-1 col-form-label">Método de pago:</label>
+      <div class="col-sm-2">
         <input type="text" class="form-control" id="metodo" name="metodo" autofocus required>
       </div>
     </div>
@@ -27,7 +27,6 @@ if ($conn) {
 
   echo "<div class='container mt-5'>
           <div class='row'>
-            <div class='col-sm-2'><a href='../index.php'>Volver</a></div>
             <div class='col-sm-8'>
               <h3>Métodos de pago</h3>
             </div>

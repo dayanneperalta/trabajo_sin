@@ -51,7 +51,7 @@ if ($conn) {
         <div class="card bg-light mb-4 ms-3 col-sm-5" style="max-width: 20rem;">
           <div class="card-header">' . $result2['marca'] . '</div>
           <div class="card-body">
-            <h4 class="card-title">' . $result['producto'] . '</h4>
+            <h4 class="card-title">' . $result['producto'] . ' - <b class="text-danger">S/' . $result['precio'] . '</b></h4>
             <img class="picture" src="../img/' . $result['imagen'] . '" alt="imagen de prueba">
             <p class="card-text mt-2">' . $result['descProducto'] . '</p>
             ' . $userSession;
