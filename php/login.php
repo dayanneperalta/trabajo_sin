@@ -1,13 +1,19 @@
 <?php
 include "./connection.php";
 include "./header.php";
+include "./adminAccess.php";
 
 
 echo $header_html;
 
 if (isset($_SESSION['user_id'])) {
-  echo "<h3 class='mt-3 ms-2'>Bienvenid@, " . $_SESSION['nombres'] . " " . $_SESSION['apellidos'] . "</h3>";
+  $rolVerifier = ($_SESSION['user_rol'] == 1) ? 'ADMIN' : '';
+  echo "<h3 class='mt-3 ms-2'>Bienvenid@, " . $_SESSION['nombres'] . " " . $_SESSION['apellidos'] . " - <b class='text-danger'>" . $rolVerifier . "</b></h3>";
   echo "<h6 class='mt-3 ms-2'>Ciudad actual: " . $_SESSION['ciudad'] . "</h6>";
+
+  if ($_SESSION['user_rol'] == 1) {
+    echo $admin;
+  }
 
   $qryCiudad = $conn->query("SELECT * from ciudades WHERE idCIUDAD <> " . $_SESSION['idCiudad']);
   echo
@@ -17,6 +23,9 @@ if (isset($_SESSION['user_id'])) {
       <div class="col-sm-2">
         <select class="form-select" name="ciudad" id="ciudad" required>
     <option value="">--Escoge una ciudad--</option>';
+
+
+
   while ($result = mysqli_fetch_array($qryCiudad)) {
     echo '<option value="' . $result['idCIUDAD'] . '">' . $result['ciudad'] . '</option>';
   }
@@ -33,24 +42,24 @@ if (isset($_SESSION['user_id'])) {
   </form>';
 } else {
   echo '
-<h4>Iniciar sesión:</h4>
-  <form action="" method="post">
+<h4 class="ms-3 mt-3">Iniciar sesión:</h4>
+  <form action="" method="post" class="ms-3">
     <div class="row mb-3">
-      <label for="nickname" class="col-sm-2 col-form-label">Nickname:</label>
-      <div class="col-sm-4">
+      <label for="nickname" class="col-sm-1 col-form-label">Nickname:</label>
+      <div class="col-sm-2">
         <input type="text" class="form-control" id="nickname" name="nickname" autofocus required>
       </div>
     </div>
     <div class="row mb-3">
-      <label for="password" class="col-sm-2 col-form-label">Password:</label>
-      <div class="col-sm-4">
+      <label for="password" class="col-sm-1 col-form-label">Password:</label>
+      <div class="col-sm-2">
         <input type="password" class="form-control" id="password" name="password" required>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Iniciar sesión</button>
   </form>
   <div>
-  <a href="./newUser.php">Registrarse</a>
+  <a class="ms-3" href="./newUser.php">Registrarse</a>
   </div>
   ';
 

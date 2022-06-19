@@ -7,21 +7,20 @@ echo $header_html;
 if ($conn) {
   $qry = $conn->query('SELECT * FROM productos');
   $qry2 = $conn->query('SELECT * FROM locales');
-  echo '<br>';
-  echo '<div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>';
-  echo '<br>';
-  echo '<form action="" method="post" enctype="multipart/form-data">';
-  echo '<div class="row mb-3">';
-  echo    '<label for="stock" class="col-sm-2 col-form-label">Stock:</label>';
-  echo    '<div class="col-sm-4">';
-  echo      '<input type="number" class="form-control" id="stock" name="stock" autofocus required>';
-  echo    '</div>';
-  echo  '</div>';
-  echo '<div class="row mb-3">';
-  echo    '<label for="producto" class="col-sm-2 col-form-label">Producto:</label>';
-  echo    '<div class="col-sm-4">';
-  echo      '<select class="form-select" name="producto" id="producto" required>';
-  echo  '<option value="">--Escoge un producto--</option>';
+  echo '<div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+     <h4 class="ms-2">Registrar stock:</h4>
+   <form action="" method="post" enctype="multipart/form-data" class="ms-2">
+   <div class="row mb-3">
+      <label for="stock" class="col-sm-2 col-form-label">Stock:</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control" id="stock" name="stock" autofocus required>
+      </div>
+    </div>
+   <div class="row mb-3">
+      <label for="producto" class="col-sm-2 col-form-label">Producto:</label>
+      <div class="col-sm-4">
+        <select class="form-select" name="producto" id="producto" required>
+    <option value="">--Escoge un producto--</option>';
   while ($result = mysqli_fetch_array($qry)) {
     $qry3 = $conn->query("SELECT * FROM marcas WHERE idMARCA = " . $result['idMARCA']);
     $qryMarca = mysqli_fetch_array($qry3);

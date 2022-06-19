@@ -4,17 +4,17 @@ include './header.php';
 
 echo $header_html;
 
-echo '
-<h4>Ingresar Marca:</h4>
-  <form action="" method="post">
+echo '<div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+<h4 class="ms-2">Ingresar Marca:</h4>
+  <form action="" method="post" class="ms-2">
     <div class="row mb-3">
-      <label for="marca" class="col-sm-2 col-form-label">Marca:</label>
-      <div class="col-sm-4">
+      <label for="marca" class="col-sm-1 col-form-label">Marca:</label>
+      <div class="col-sm-2">
         <input type="text" class="form-control" id="marca" name="marca" autofocus required>
       </div>
     </div>
     <div class="row mb-3">
-      <label for="descripcion" class="col-sm-2 col-form-label">Descripción:</label>
+      <label for="descripcion" class="col-sm-1 col-form-label">Descripción:</label>
       <div class="col-sm-4">
         <input type="text" class="form-control" id="descripcion" name="descripcion" required>
       </div>
@@ -35,7 +35,6 @@ if ($conn) {
 
   echo "<div class='container mt-5'>
           <div class='row'>
-            <div class='col-sm-2'><a href='../index.php'>Volver</a></div>
             <div class='col-sm-8'>
               <h3>Marcas</h3>
             </div>

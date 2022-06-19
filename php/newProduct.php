@@ -6,10 +6,10 @@ echo $header_html;
 
 if ($conn) {
   $qry = $conn->query('SELECT * FROM marcas');
-  echo '<br>
-   <div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>
-   <br>
-   <form action="" method="post" enctype="multipart/form-data">
+  echo '
+  <div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+     <h4 class="ms-2">Registrar producto:</h4>
+   <form action="" method="post" class="ms-2" enctype="multipart/form-data">
    <div class="row mb-3">
       <label for="producto" class="col-sm-2 col-form-label">Producto:</label>
       <div class="col-sm-4">
@@ -17,13 +17,13 @@ if ($conn) {
       </div>
     </div>
    <div class="row mb-3">
-      <label for="precio" class="col-sm-2 col-form-label">Precio:</label>
+      <label for="precio" class="col-sm-2 col-form-label">Precio (S/):</label>
       <div class="col-sm-4">
         <input type="number" class="form-control" id="precio" name="precio" required>
       </div>
     </div>
    <div class="row mb-3">
-      <label for="imagen" class="col-sm-2 col-form-label">Imagen:</label>
+      <label for="imagen2" class="col-sm-2 col-form-label">Imagen:</label>
       <div class="col-sm-4">
         <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen" required>
       </div>

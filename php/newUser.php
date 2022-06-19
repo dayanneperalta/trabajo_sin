@@ -6,47 +6,47 @@ echo $header_html;
 if (!isset($_SESSION['user_id'])) {
   if ($conn) {
     $qry = $conn->query('SELECT * FROM ciudades');
-    echo '<br>';
-    echo '<div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>';
-    echo '<br>';
-    echo '<form action="" method="post">';
-    echo '<div class="row mb-3">';
-    echo    '<label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>';
-    echo    '<div class="col-sm-4">';
-    echo      '<input type="text" class="form-control" id="nombre" name="nombre" autofocus required>';
-    echo    '</div>';
-    echo  '</div>';
-    echo '<div class="row mb-3">';
-    echo    '<label for="apellidos" class="col-sm-2 col-form-label">Apellido:</label>';
-    echo    '<div class="col-sm-4">';
-    echo      '<input type="text" class="form-control" id="apellidos" name="apellidos" required>';
-    echo    '</div>';
-    echo  '</div>';
-    echo '<div class="row mb-3">';
-    echo    '<label for="nickname" class="col-sm-2 col-form-label">Nickname:</label>';
-    echo    '<div class="col-sm-4">';
-    echo      '<input type="text" class="form-control" id="nickname" name="nickname" required>';
-    echo    '</div>';
-    echo  '</div>';
-    echo '<div class="row mb-3">';
-    echo    '<label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>';
-    echo    '<div class="col-sm-4">';
-    echo      '<select class="form-select" name="ciudad" id="ciudad" required>';
-    echo  '<option value="">--Escoge una ciudad--</option>';
+    echo '
+     <div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+     <h4 class="ms-2">Registrar usuario:</h4>
+     <form action="" method="post" class="ms-2">
+     <div class="row mb-3">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nombre" name="nombre" autofocus required>
+        </div>
+      </div>
+     <div class="row mb-3">
+        <label for="apellidos" class="col-sm-2 col-form-label">Apellido:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+        </div>
+      </div>
+     <div class="row mb-3">
+        <label for="nickname" class="col-sm-2 col-form-label">Nickname:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="nickname" name="nickname" required>
+        </div>
+      </div>
+     <div class="row mb-3">
+        <label for="ciudad" class="col-sm-2 col-form-label">Ciudad:</label>
+        <div class="col-sm-4">
+          <select class="form-select" name="ciudad" id="ciudad" required>
+      <option value="">--Escoge una ciudad--</option>';
     while ($result = mysqli_fetch_array($qry)) {
       echo '<option value="' . $result['idCIUDAD'] . '">' . $result['ciudad'] . '</option>';
     }
-    echo '</select>';
-    echo    '</div>';
-    echo  '</div>';
-    echo '<div class="row mb-3">';
-    echo    '<label for="password" class="col-sm-2 col-form-label">Password:</label>';
-    echo    '<div class="col-sm-4">';
-    echo      '<input type="password" class="form-control" id="password" name="password" required>';
-    echo    '</div>';
-    echo  '</div>';
-    echo  '<button type="submit" class="btn btn-primary">Ingresar usuario</button>';
-    echo '</form>';
+    echo '</select>
+        </div>
+      </div>
+     <div class="row mb-3">
+        <label for="password" class="col-sm-2 col-form-label">Password:</label>
+        <div class="col-sm-4">
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Ingresar usuario</button>
+     </form>';
   }
 
   $nombre = '';

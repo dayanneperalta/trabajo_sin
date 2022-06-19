@@ -7,10 +7,9 @@ echo $header_html;
 if ($conn) {
   $qry = $conn->query('SELECT * FROM ciudades');
   $qry2 = $conn->query('SELECT * FROM locales');
-  echo '<br>
-   <div class="col-sm-2">&nbsp<a href="../index.php">Volver</a></div>
-   <br>
-   <form action="" method="post">
+  echo '<div class="col-sm-2 mt-1 mb-2"><a class="ms-2" href="./login.php">Volver</a></div>
+     <h4 class="ms-2">Registrar Local:</h4>
+   <form action="" method="post" class="ms-2">
    <div class="row mb-3">
       <label for="local" class="col-sm-2 col-form-label">Local:</label>
       <div class="col-sm-4">
