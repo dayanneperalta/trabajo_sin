@@ -51,9 +51,9 @@ include "./php/header.php";
       </div>
     </nav>
 
-
-    <h1>HOLA</h1>
-
+<?php
+echo  '<img class="img-fluid picture2" width="100%" src="./img/index.png">';
+?>
 
 
   </div>

@@ -59,7 +59,7 @@ if (isset($_SESSION["cart"])) {
 </table>';
   echo '<a href="./purchase.php?pago=1"><button class= "btn btn-primary ms-3">Check-out</button></a>';
 } else {
-  echo '<h4>NO TIENE PRODUCTOS EN EL CARRITO2</h4>';
+  echo '<h4>NO TIENE PRODUCTOS EN EL CARRITO</h4>';
 }
 
 echo $footer_html;
