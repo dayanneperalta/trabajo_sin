@@ -5,8 +5,11 @@ include "./header.php";
 echo $header_html;
 
 if ($conn) {
-  $qry = $conn->query('SELECT p.*, s.stock from productos p, stock_local s, locales l WHERE p.idPRODUCTO = s.idPRODUCTO AND s.idLOCAL = l.idLOCAL and l.idCIUDAD = ' . $_SESSION['idCiudad'] . ' ORDER BY s.stock DESC');
-
+  if (isset($_SESSION['user_id'])) {
+    $qry = $conn->query('SELECT p.*, s.stock from productos p, stock_local s, locales l WHERE p.idPRODUCTO = s.idPRODUCTO AND s.idLOCAL = l.idLOCAL and l.idCIUDAD = ' . $_SESSION['idCiudad'] . ' ORDER BY s.stock DESC');
+  } else {
+    $qry = $conn->query('SELECT p.*, s.stock from productos p, stock_local s, locales l WHERE p.idPRODUCTO = s.idPRODUCTO AND s.idLOCAL = l.idLOCAL ORDER BY s.stock DESC');
+  }
   echo "<div class='ms-3 mt-3'><a href='../index.php'>Inicio</a></div>
 <div class='row mt-2'>";
   if (!isset($_SESSION['user_id'])) {
@@ -23,7 +26,7 @@ if ($conn) {
 
       echo
       '<div class="row mb-2">
-      <label for="local" class="col-sm-auto col-form-label">Local de recojo en ' . $_SESSION['ciudad'] . ':</label>
+      <label for="local" class="col-sm-auto col-form-label ms-2">Local de recojo en ' . $_SESSION['ciudad'] . ':</label>
       <div class="col-sm-auto">
       <fieldset disabled>
         <input type="text" placeholder="' . $resultLocal['local'] . '"class="form-control form-control-sm" id="local" name="local" autofocus required>
@@ -47,15 +50,16 @@ if ($conn) {
 
       while ($result2 = mysqli_fetch_array($qry2)) {
         $userSession = isset($_SESSION['user_id']) ? '<a href="./add_to_cart.php?id=' . $result['idPRODUCTO'] . '">Añadir al carrito 🛒</a></div></div>' : '</div></div>';
-        $stockValidate = ($result['stock'] == 0) ? '' : $userSession;
+        $addValidate = ($result['stock'] == 0) ? '' : $userSession;
+        $stockValidate = (isset($_SESSION['user_id'])) ? ' - Stock: ' . $result['stock'] : '';
         $alert = isset($_SESSION["alert"]) ? '<script language="javascript">alert("' . $_SESSION['alert'] . '");</script>' : '';
         echo '
         <div class="card bg-light mb-4 ms-3 col-sm-5" style="max-width: 20rem;">
-          <div class="card-header">' . $result2['marca'] . ' - Stock: ' . $result['stock'] . '</div>
+          <div class="card-header">' . $result2['marca'] . $stockValidate . '</div>
           <div class="card-body">
             <h4 class="card-title">' . $result['producto'] . ' - <b class="text-danger">S/' . $result['precio'] . '</b></h4>
             <img class="picture" src="../img/' . $result['imagen'] . '" alt="imagen de prueba">
-            <p class="card-text mt-2">' . $result['descProducto'] . '</p>' . $stockValidate . $alert;
+            <p class="card-text mt-2">' . $result['descProducto'] . '</p>' . $addValidate . $alert;
         unset($_SESSION["alert"]);
         /*  try {
           if (isset($_SESSION['user_id'])) {
@@ -74,14 +78,6 @@ if ($conn) {
   }
   echo '</div>';
 }
-
-
-
-
-
-
-
-
 
 
 

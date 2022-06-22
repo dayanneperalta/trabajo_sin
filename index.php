@@ -50,13 +50,14 @@ include "./php/header.php";
         </div>
       </div>
     </nav>
-
-
-    <h1>HOLA</h1>
-
-
-
   </div>
+
+
+  <?php
+  echo "<img class='picture2 img-fluid' width='100%' src='./img/index.png'>";
+  ?>
+
+
 
   <?php
   echo $footer_html;
