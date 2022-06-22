@@ -11861,3 +11861,8 @@ legend {
   margin-right: auto;
   width: 50%;
 }
+.picture1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
