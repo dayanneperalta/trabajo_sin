@@ -54,7 +54,7 @@ include "./php/header.php";
 
 
   <?php
-  echo "<img class='picture2 img-fluid' width='100%' src='./img/index.png'>";
+  echo "<img class='img-fluid' width='100%' src='./img/index.png'>";
   ?>
 
 
