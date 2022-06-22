@@ -37,6 +37,10 @@ include "./php/header.php";
               <a class="nav-link" href="./php/login.php"><?php
                                                           echo isset($_SESSION['user_id']) ? 'Perfil' : 'Iniciar sesión'; ?></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./php/about.php">Acerca</a>
+            </li>
+
             <?php
             echo isset($_SESSION['user_id']) ? '<li class="nav-item">
               <a class="nav-link" href="./php/carrito.php">Carrito</a>
@@ -56,8 +60,6 @@ include "./php/header.php";
   <?php
   echo "<img class='img-fluid' width='100%' src='./img/index.png'>";
   ?>
-
-
 
   <?php
   echo $footer_html;
