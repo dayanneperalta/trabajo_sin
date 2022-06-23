@@ -19,11 +19,16 @@ echo '<ul class="nav nav-tabs">
 </ul>
 <div id="myTabContent" class="tab-content">
   <div class="tab-pane fade active show" id="Historia">
-    <p>Era el año 2010. Dick Hayne tenía solo 23 años cuando él, su compañero de cuarto de la universidad Scott Belair y Judy Wicks tuvieron la idea de abrir una tienda minorista en línea. Belair estaba buscando un tema para una clase empresarial que estaba tomando en ese momento. Es así como nace Trending, la tienda online de retail que contiene tus marcas favoritas en un solo lugar.</</p>
+    <p>Era el año 2010. Dick Hayne tenía solo 23 años cuando él, su compañero de cuarto de la universidad Scott Belair y Judy Wicks tuvieron la idea de abrir una tienda minorista en línea. Belair estaba buscando un tema para una clase empresarial que estaba tomando en ese momento. Es así como nace Trending, la tienda online de retail que contiene tus marcas favoritas en un solo lugar.</p>
   </div>
-  <div class="tab-pane fade" id="profile">
+  <div class="tab-pane fade" id="Misión">
     <p>Food truck fixie locavore, accusamus mcsweeneys marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
   </div>
+  <div class="tab-pane fade" id="dropdown1">
+    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeneys organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+  </div>
+
 </div>';
+
 echo "<img class='img-fluid' width='100%' src='../img/historiasin.png'>";
-echo $footer_html;
+  echo $footer_html;
