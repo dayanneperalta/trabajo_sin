@@ -59,7 +59,9 @@ if ($conn) {
           <div class="card-body">
             <h4 class="card-title">' . $result['producto'] . ' - <b class="text-danger">S/' . $result['precio'] . '</b></h4>
             <img class="picture" src="../img/' . $result['imagen'] . '" alt="imagen de prueba">
-            <p class="card-text mt-2">' . $result['descProducto'] . '</p>' . $addValidate . $alert;
+            <p class="card-text mt-2">' . $result['descProducto'] . '</p>
+            <a href="./detalleProducto.php?id=' . $result['idPRODUCTO'] . '"><strong>Ver detalle</strong></a><p>
+            ' . $addValidate . $alert;
         unset($_SESSION["alert"]);
         /*  try {
           if (isset($_SESSION['user_id'])) {
