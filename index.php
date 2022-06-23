@@ -52,10 +52,10 @@ include "./php/header.php";
     </nav>
   </div>
 
-
   <?php
   echo "<img class='img-fluid' width='100%' src='./img/index.png'>";
   ?>
+
 
 
 
