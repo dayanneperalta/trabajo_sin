@@ -23,6 +23,7 @@ if (isset($_GET["id"])) {
           $alert = isset($_SESSION["alert"]) ? '<script language="javascript">alert("' . $_SESSION['alert'] . '");</script>' : '';
 
           echo '
+          <div class="ms-3 mt-3"><a href="./showProducts.php">Ir a Productos</a></div>
           <div class="row">
             <div class="col">
               <br><img class="picture" src="../img/' . $result['imagen'] . '" alt="imagen de prueba">  
