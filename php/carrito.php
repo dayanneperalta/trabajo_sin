@@ -64,4 +64,5 @@ if (isset($_SESSION['idCiudad'])) {
 } else {
   echo '<h3 class="ms-3 mt-2"><a href="./login.php">INICIE SESIÓN<a> PARA ENTRAR AL CARRITO</h4>';
 }
+
 echo $footer_html;

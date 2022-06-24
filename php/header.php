@@ -38,8 +38,11 @@ $header_html = '
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./login.php">' . $userValidate . '</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.php">Acerca</a>
             </li>'
-  . $carritoValidate . '                
+  . $carritoValidate . '
           </ul>
           <form action="" method="post" class="d-flex">
             <input class="form-control me-sm-2" type="text" placeholder="Buscar">
