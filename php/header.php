@@ -29,7 +29,7 @@ $header_html = '
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="../index.php">Inicio
+              <a class="nav-link" href="../index.php">Inicio
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
@@ -39,10 +39,10 @@ $header_html = '
             <li class="nav-item">
               <a class="nav-link" href="./login.php">' . $userValidate . '</a>
             </li>
-            <li class="nav-item">
+            '
+  . $carritoValidate . '<li class="nav-item">
               <a class="nav-link" href="./about.php">Acerca</a>
-            </li>'
-  . $carritoValidate . '
+            </li>
           </ul>
           <form action="" method="post" class="d-flex">
             <input class="form-control me-sm-2" type="text" placeholder="Buscar">
