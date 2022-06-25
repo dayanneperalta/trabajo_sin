@@ -6,7 +6,9 @@ echo $header_html;
 $total = 0;
 
 if (isset($_SESSION['user_id'])) {
-  echo '<div class=" ms-2 mt-2">
+  echo '
+<div class="ms-3 mt-3"><a href="./historial.php">Regresar a Historial</a></div>
+<div class=" ms-2 mt-2">
   <h1>Detalle de venta</h1>
   <p>Esta es la lista de productos que compraste con nosotros</p>
 </div>';
